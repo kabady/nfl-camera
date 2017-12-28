@@ -11,17 +11,17 @@ export class Page1 extends Page {
   constructor() {
     super();
   }
-  initPageElem(): void{
+  initPageElem(): void {
     this.DOMAPI = DomAPI.CreateByHtmlString(HTML);
     this.pDOMAPI.append(this.DOMAPI.getElemList());
   }
-  initPageEvent(): void{
+  initPageEvent(): void {
     this.DOMAPI.find('.action-enter-next').on('click', () => {
       routes.go('page2');
     })
   }
-  setBackground():void{
-    let background = DomAPI.CreateByHtmlString(`<img class="bg" '>`);
+  setBackground(): void {
+    let background = DomAPI.CreateByHtmlString(`<img class="bg" src="${assetMap.page1bg}" '>`);
     this.DOMAPI.appendBefore(background.getElemList());
   }
 }

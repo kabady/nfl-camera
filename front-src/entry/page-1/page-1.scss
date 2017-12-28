@@ -1,8 +1,11 @@
 @function r($rem) {
-    @return $rem / 640 * 3.2 * 1rem;
+  @return $rem / 640 * 3.2 * 1rem;
 }
-.page-1{
-    .page-container{
-        
-    }
+
+.page-1 {
+  .action-enter-next{
+    width: r(285);
+    height: r(77);
+    margin: r(835) auto 0;
+  }
 }

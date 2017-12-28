@@ -1,4 +1,13 @@
 @function r($rem) {
   @return $rem / 640 * 3.2 * 1rem;
 }
-
+body{
+  background: #000;
+}
+.page{
+  height: r(1050);
+  
+}
+.pointer-events-none{
+  pointer-events: none;
+}

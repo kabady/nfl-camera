@@ -25,7 +25,6 @@ export abstract class Page {
       this._display = false;
       this.hideafter();
     }
-    
   }
   showbefore(): void{}
   hidebefore(): void{}

@@ -6,12 +6,16 @@ import { RemInit } from '../lib/Rem';
 import { routes } from './router';
 
 import { Page1 } from "./page-1/page-1";
-
+import { Page2 } from './page-2/page-2';
+import { Page3 } from './page-3/page-3';
+import { Page4 } from './page-4/page-4';
 
 function initApp(){
   RemInit();
   routes.set('page1', new Page1());
-
+  routes.set('page2', new Page2());
+  routes.set('page3', new Page3());
+  routes.set('page4', new Page4());
 
   routes.router('page1', () => {
     closePage();

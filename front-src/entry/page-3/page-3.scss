@@ -1,0 +1,124 @@
+@function r($rem) {
+  @return $rem / 640 * 3.2 * 1rem;
+}
+
+.page-3 {
+  background: #444444;
+  .page-container{
+    height: 100%;
+  }
+  .user-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .mask-img{
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+  .user-touch{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+  }
+  .user-event{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    .image-save{
+      position: absolute;
+      top: r(44);
+      right: r(44);
+      width: r(58);
+      height: r(52);
+      background: url(../../_asset/save.png) no-repeat center center;
+      background-size: 100% 100%;
+    }
+    .image-clear{
+      position: absolute;
+      top: r(44 + 58 + 20);
+      right: r(44);
+      width: r(58);
+      height: r(52);
+      background: url(../../_asset/clear.png) no-repeat center center;
+      background-size: r(40) r(40);
+    }
+  }
+  .input-select-container{
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .user-file-select{
+    position: absolute;
+    top: r(354);
+    left: 50%;
+    transform: translate(-50%);
+    .square{
+      width: r(110);
+      height: r(110);
+      border: 1px dashed #fff;
+      margin: 0 auto r(20);
+      position: relative;
+      &::before, &::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 1px;
+        width: 1px;
+        background: #fff;
+      }
+      &::before{
+        height: r(66);
+      }
+      &::after{
+        width: r(66);
+      }
+    }
+    span{
+      display: block;
+      font-size: r(28);
+      line-height: 1.5;
+      color: #fff;
+    }
+    .file-input{
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+  .action-enter-next{
+    width: r(285);
+    height: r(77);
+    margin: r(835) auto 0;
+  }
+}

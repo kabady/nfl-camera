@@ -14,7 +14,6 @@ export class Routes {
   constructor() {
     
   }
-  
   set(pageName: string, page: Page){
     this.pages.push({
       id: pageName,
@@ -27,9 +26,10 @@ export class Routes {
         return this.pages[i].page
       }
     }
+    console.warn('there is no ' + pageName);
   }
   
-  router(sign: string, handle: () => void){
+  router(sign: string, handle: (argu) => void){
     this.routerPath.push({
       id: sign,
       handle: handle
