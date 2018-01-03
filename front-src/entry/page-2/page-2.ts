@@ -2,64 +2,17 @@ import './page-2.scss';
 import { Page } from '../../lib/Page-0.1.1';
 import { DomAPI } from '../../lib/DomAPI-0.0.4';
 import { routes } from '../router';
-import { assetMap } from '../assetUtil';
+import { assetMap, DataTeamLeft, DataTeamRight } from '../assetUtil';
 let HTML: string = require('./page-2.html');
 
 export class TeamInfo {
+  id: string;
   logo: string;
   name: string;
   template: string;
 }
-let teamleft: Array<TeamInfo> = [{
-  logo: require('../../_asset/team-logo-1.png'),
-  name: '亚特兰大<br>猎鹰l0',
-  template: require('../../_asset/team-template-1.png')
-}, {
-  logo: require('../../_asset/team-logo-1.png'),
-  name: '亚特兰大<br>猎鹰l1',
-  template: require('../../_asset/team-template-1.png')
-}, {
-  logo: require('../../_asset/team-logo-1.png'),
-  name: '亚特兰大<br>猎鹰l2',
-  template: require('../../_asset/team-template-1.png')
-}, {
-  logo: require('../../_asset/team-logo-1.png'),
-  name: '亚特兰大<br>猎鹰l3',
-  template: require('../../_asset/team-template-1.png')
-}, {
-  logo: require('../../_asset/team-logo-1.png'),
-  name: '亚特兰大<br>猎鹰l4',
-  template: require('../../_asset/team-template-1.png')
-}, {
-  logo: require('../../_asset/team-logo-1.png'),
-  name: '亚特兰大<br>猎鹰l5',
-  template: require('../../_asset/team-template-1.png')
-}]
-let teamright: Array<TeamInfo> = [{
-  logo: require('../../_asset/team-logo-1.png'),
-  name: '亚特兰大<br>猎鹰r0',
-  template: require('../../_asset/team-template-1.png')
-}, {
-  logo: require('../../_asset/team-logo-1.png'),
-  name: '亚特兰大<br>猎鹰r1',
-  template: require('../../_asset/team-template-1.png')
-}, {
-  logo: require('../../_asset/team-logo-1.png'),
-  name: '亚特兰大<br>猎鹰r2',
-  template: require('../../_asset/team-template-1.png')
-}, {
-  logo: require('../../_asset/team-logo-1.png'),
-  name: '亚特兰大<br>猎鹰r3',
-  template: require('../../_asset/team-template-1.png')
-}, {
-  logo: require('../../_asset/team-logo-1.png'),
-  name: '亚特兰大<br>猎鹰r4',
-  template: require('../../_asset/team-template-1.png')
-}, {
-  logo: require('../../_asset/team-logo-1.png'),
-  name: '亚特兰大<br>猎鹰r5',
-  template: require('../../_asset/team-template-1.png')
-}]
+let teamleft: Array<TeamInfo> = DataTeamLeft;
+let teamright: Array<TeamInfo> = DataTeamRight;
 
 export class Page2 extends Page {
   constructor() {
@@ -89,7 +42,7 @@ export class Page2 extends Page {
     let teamrightContainer = this.DOMAPI.find('.team-select .right');
     teamrightContainer.empty();
     HTML = '';
-    teamleft.forEach( (obj, index) => {
+    teamright.forEach( (obj, index) => {
       HTML += `
         <div class="team-item" data-index="${index}">
         <div class="pic">

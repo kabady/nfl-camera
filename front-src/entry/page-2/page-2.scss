@@ -44,6 +44,9 @@
         .pic{
           background: #fff;
         }
+        > span{
+          opacity: 1;
+        }
       }
       .pic{
         width: 100%;
@@ -67,6 +70,8 @@
         text-align: center;
         display: block;
         height: r(56);
+        opacity: 0;
+        transition: all .7s;
       }
     }
     .team-item:nth-child(2n){

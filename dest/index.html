@@ -1,29 +1,126 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
 	<meta charset="utf-8">
-	
+
 	<!-- 360 使用Google Chrome Frame -->
 	<meta name="renderer" content="webkit">
 	<title>title</title>
-	
+
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-	
+
 	<!-- 优先使用 IE 最新版本和 Chrome -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	
+
 	<!-- SEO页面关键词 -->
 	<meta name="keywords" content="your keywords">
-	
+
 	<!-- SEO页面描述 -->
 	<meta name="description" content="your description">
-	
+
 	<!-- favicon，可更改图片类型 -->
 	<link rel="shortcut icon" href="/favicon.ico" type="image/ico">
-	
+
 </head>
+
 <body>
 </body>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+	var data = [{
+		"id": 3200,
+		"name": "\u7231\u56fd\u8005",
+		"logo_link": "http:\/\/www.nflchina.com\/images\/team_logo\/3200.png",
+		"frame_link": "http:\/\/minisite-d.hupucdn.com\/superbowl52_photo_frame_3200.png"
+	}, {
+		"id": 3900,
+		"name": "\u94a2\u4eba",
+		"logo_link": "http:\/\/www.nflchina.com\/images\/team_logo\/3900.png",
+		"frame_link": "http:\/\/minisite-d.hupucdn.com\/superbowl52_photo_frame_3900.png"
+	}, {
+		"id": 2250,
+		"name": "\u7f8e\u6d32\u864e",
+		"logo_link": "http:\/\/www.nflchina.com\/images\/team_logo\/2250.png",
+		"frame_link": "http:\/\/minisite-d.hupucdn.com\/superbowl52_photo_frame_2250.png"
+	}, {
+		"id": 2310,
+		"name": "\u914b\u957f",
+		"logo_link": "http:\/\/www.nflchina.com\/images\/team_logo\/2310.png",
+		"frame_link": "http:\/\/minisite-d.hupucdn.com\/superbowl52_photo_frame_2310.png"
+	}, {
+		"id": 2100,
+		"name": "\u6cf0\u5766",
+		"logo_link": "http:\/\/www.nflchina.com\/images\/team_logo\/2100.png",
+		"frame_link": "http:\/\/minisite-d.hupucdn.com\/superbowl52_photo_frame_2100.png"
+	}, {
+		"id": 610,
+		"name": "\u6bd4\u5c14",
+		"logo_link": "http:\/\/www.nflchina.com\/images\/team_logo\/610.png",
+		"frame_link": "http:\/\/minisite-d.hupucdn.com\/superbowl52_photo_frame_610.png"
+	}, {
+		"id": 3700,
+		"name": "\u8001\u9e70",
+		"logo_link": "http:\/\/www.nflchina.com\/images\/team_logo\/3700.png",
+		"frame_link": "http:\/\/minisite-d.hupucdn.com\/superbowl52_photo_frame_3700.png"
+	}, {
+		"id": 3000,
+		"name": "\u7ef4\u4eac\u4eba",
+		"logo_link": "http:\/\/www.nflchina.com\/images\/team_logo\/3000.png",
+		"frame_link": "http:\/\/minisite-d.hupucdn.com\/superbowl52_photo_frame_3000.png"
+	}, {
+		"id": 2510,
+		"name": "\u516c\u7f8a",
+		"logo_link": "http:\/\/www.nflchina.com\/images\/team_logo\/2510.png",
+		"frame_link": "http:\/\/minisite-d.hupucdn.com\/superbowl52_photo_frame_2510.png"
+	}, {
+		"id": 3300,
+		"name": "\u5723\u5f92",
+		"logo_link": "http:\/\/www.nflchina.com\/images\/team_logo\/3300.png",
+		"frame_link": "http:\/\/minisite-d.hupucdn.com\/superbowl52_photo_frame_3300.png"
+	}, {
+		"id": 750,
+		"name": "\u9ed1\u8c79",
+		"logo_link": "http:\/\/www.nflchina.com\/images\/team_logo\/750.png",
+		"frame_link": "http:\/\/minisite-d.hupucdn.com\/superbowl52_photo_frame_750.png"
+	}, {
+		"id": 200,
+		"name": "\u730e\u9e70",
+		"logo_link": "http:\/\/www.nflchina.com\/images\/team_logo\/200.png",
+		"frame_link": "http:\/\/minisite-d.hupucdn.com\/superbowl52_photo_frame_200.png"
+	}];
+
+	wx.config({
+		debug: false,
+		appId: 'wx59def40d590a20c3',
+		timestamp: '1514945719',
+		nonceStr: 'Wm3WZYTPz0wzccnW',
+		signature: 'a05580558e1d0bd85200027f0d12670363ff8ed9',
+		jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+	});
+	wx.ready(function () {
+		var shareData = {
+			title: "超级碗，为我的主队打CALL！",
+			desc: "",
+			link: "http://mns.hupu.com/nfl2018",
+			imgUrl: "http://minisite-d.hupucdn.com/ELClasico_weixin_share_logo.png?imageView2/4/h/150",
+			success: function () {},
+			cancel: function () {}
+		};
+		wx.onMenuShareTimeline(shareData);
+		wx.onMenuShareAppMessage(shareData);
+
+		window.ajax_callback = {
+			send_complete_ok: function (title, desc) {
+				shareData.title = title;
+				shareData.desc = desc;
+				wx.onMenuShareTimeline(shareData);
+				wx.onMenuShareAppMessage(shareData);
+			}
+		}
+	});
+</script>
 <script type="text/javascript" src="http://mns.hupu.com/common/exif/exif.min.js"></script>
 <script type="text/javascript" main-js="" src="./deploy/index.entry.js"></script>
+
 </html>

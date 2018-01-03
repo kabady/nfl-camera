@@ -8,16 +8,18 @@ export function page4LastImage(imgSrc: Array<string>, handle: (base64) => void) 
 
   let imageList = [], imgSrcArr = [].concat(imgSrc);
   imgSrc.forEach(imgbasesrc => {
-    let a = document.createElement('img');
-    a.src = imgbasesrc;
-    imageList.push(a);
-    a.onload = function () {
+    let img = document.createElement('img');
+    img.crossOrigin = "anonymous";
+    img.src = imgbasesrc;
+    imageList.push(img);
+    img.onload = function () {
       imgSrcArr.pop();
       if(imgSrcArr.length == 0){
         imageList.forEach( image => {
           ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
         })
         ctx.drawImage(qrImage, 500, 720, 112, 112);
+        
         handle(canvas.toDataURL('image/jpeg'));
       }
     }
